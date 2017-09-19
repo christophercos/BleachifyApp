@@ -104,6 +104,28 @@ main {
 	padding-top: 50px;
 }
 
+.loadingContainer {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 50px;
+}
+
+.active {
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.3s;
+}
+
+.loadingContainer i {
+	color: #f6f6f6;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
 .grid {
 	padding: 0;
 	margin: 0;
@@ -175,14 +197,17 @@ input[type=text]:focus {
 ::-moz-placeholder { /* Firefox 19+ */
   color: #f6f6f6;
   font-family: 'Ostrich Sans', sans-serif;
+	font-size: 2rem;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: #f6f6f6;
   font-family: 'Ostrich Sans', sans-serif;
+	font-size: 2rem;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #f6f6f6;
   font-family: 'Ostrich Sans', sans-serif;
+	font-size: 2rem;
 }
 
 .grid {
@@ -282,7 +307,11 @@ input[type=text]:focus {
 	}
 
 	h1 {
-		font-size: 8rem;
+		font-size: 6rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
 	}
 
 	h1::after {
@@ -292,4 +321,29 @@ input[type=text]:focus {
 	header {
 		min-height: 25vh;
 	}
+}
+
+@media screen and (max-width: 640px) {
+	h2 {
+		font-size: 1.3rem;
+	}
+
+	input[type="text"] {
+		width: 250px;
+		font-size: 1rem;
+	}
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  font-size: 1.5rem;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+		font-size: 1.5rem;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+		font-size: 1.5rem;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		font-size: 1.5rem;
+	}
+
 }

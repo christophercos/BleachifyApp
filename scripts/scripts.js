@@ -7,6 +7,7 @@ bleachifyApp.key = 'ec98fe4433614a2e20e38fe27d4222cf0f82f9b135845acac3988ab15ef1
 
 
 bleachifyApp.getResults = function(search, page) {
+	bleachifyApp.displayLoader();
 	$.ajax({
 		url: 'https://proxy.hackeryou.com',
 		method: 'GET',
@@ -22,9 +23,15 @@ bleachifyApp.getResults = function(search, page) {
 			useCache: true
 		}
 	}).then(function(res){
+		bleachifyApp.displayLoader();
 		var searchData = res;
 		bleachifyApp.displayInfo(searchData.results);
 	})
+};
+
+bleachifyApp.displayLoader = function() {
+	$('.loadingContainer').toggleClass('hidden');
+	$('.loadingContainer').toggleClass('active');
 };
 
 bleachifyApp.displayInfo = function(results){
@@ -45,11 +52,11 @@ bleachifyApp.displayInfo = function(results){
 
 
 				if (bleachifyApp.masonryInitialized === true) {
-					$('.grid').masonry( 'appended', imgContainer);	
+					$('.grid').masonry( 'appended', imgContainer);
 				}
-			} 
+			}
 		});
-	// }	
+	// }
 
 	//Masonry Layout
 	if(bleachifyApp.masonryInitialized === false) {
@@ -69,13 +76,13 @@ bleachifyApp.displayInfo = function(results){
 //infinite scroll
 bleachifyApp.infScroll = function(pag, searchInput) {
 
-	$(window).on('scroll', function () { 
+	$(window).on('scroll', function () {
 	   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
 	   		pag = pag + 1;
 	   		bleachifyApp.getResults(searchInput, pag);
 	   }
 	});
-	
+
 }
 
 
@@ -93,7 +100,7 @@ bleachifyApp.search = function() {
 }
 
 bleachifyApp.init = function() {
-	bleachifyApp.search(); 
+	bleachifyApp.search();
 }
 
 $(function(){
