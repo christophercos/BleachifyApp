@@ -21,10 +21,10 @@ bleachifyApp.getResults = function(search, page) {
 				page
 			},
 			useCache: true
-		}
+		} 
 	}).then(function(res){
 		bleachifyApp.displayLoader();
-		var searchData = res; 
+		var searchData = res;
 		bleachifyApp.displayInfo(searchData.results);
 	})
 };

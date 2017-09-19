@@ -344,6 +344,6 @@ input[type=text]:focus {
 	}
 	:-moz-placeholder { /* Firefox 18- */
 		font-size: 1.5rem;
-	}
+	} 
 
 }
