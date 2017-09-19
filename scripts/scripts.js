@@ -24,7 +24,7 @@ bleachifyApp.getResults = function(search, page) {
 		}
 	}).then(function(res){
 		bleachifyApp.displayLoader();
-		var searchData = res;
+		var searchData = res; 
 		bleachifyApp.displayInfo(searchData.results);
 	})
 };
