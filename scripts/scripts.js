@@ -30,8 +30,7 @@ bleachifyApp.getResults = function(search, page) {
 };
 
 bleachifyApp.displayLoader = function() {
-	$('.loadingContainer').toggleClass('hidden');
-	$('.loadingContainer').toggleClass('active');
+	$('.loadingContainer').toggleClass('hidden active');
 };
 
 bleachifyApp.displayInfo = function(results){
